@@ -4,4 +4,7 @@
 
 
 
-SELECT StudentId FROM Enrolment;
+SELECT Department.DepartmentName, COUNT(Enrolment.StudentId) AS TotalEnrolments
+FROM 
+Department JOIN Enrolment
+ON 
