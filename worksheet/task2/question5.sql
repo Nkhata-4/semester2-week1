@@ -9,4 +9,4 @@ Student JOIN Enrolment
 ON Student.StudentId = Enrolment.StudentId
 JOIN Course 
 ON Enrolment.CourseId = Course.CourseId
-WHERE Enrolment.Grade > 40;
+WHERE Enrolment.Grade >= 40;
