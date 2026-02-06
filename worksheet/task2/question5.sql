@@ -3,11 +3,12 @@
 -- StudentId, FirstName, LastName, TotalCreditsPassed
 
 
-SELECT Student.StudentId, Student.FirstName, Student.LastName, Course.Credits AS TotalCreditsPassed
+SELECT Student.StudentId, Student.FirstName, Student.LastName, SUM(Course.Credits) AS TotalCreditsPassed
 FROM
 Student JOIN Enrolment
 ON Student.StudentId = Enrolment.StudentId
 JOIN Course 
 ON Enrolment.CourseId = Course.CourseId
 WHERE Enrolment.Grade >= 40
-GROUP BY Course.CourseId;
+GROUP BY Student.StudentId;
+
